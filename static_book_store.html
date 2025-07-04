@@ -1,0 +1,147 @@
+home.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Bookstore - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      background-color: #34495e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Welcome to Online Bookstore</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalogue.html">Catalogue</a>
+      </nav>
+    </header>
+    <main>
+      <h2>About Us</h2>
+      <p>Discover great books across genres. Enjoy an easy shopping experience and fast delivery from Niphad's favorite digital bookstore!</p>
+    </main>
+    <footer>
+      <p>&copy; 2025 Online Bookstore | Designed by Suyog Patil</p>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+login.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Online Bookstore</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+  <h2>Login to Your Account</h2>
+  <form>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
+
+
+
+catalogue.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Catalogue - Online Bookstore</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+  <h2>Book Catalogue</h2>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>The Alchemist</td>
+      <td>Paulo Coelho</td>
+      <td>Fiction</td>
+      <td>₹299</td>
+    </tr>
+    <tr>
+      <td>Clean Code</td>
+      <td>Robert C. Martin</td>
+      <td>Programming</td>
+      <td>₹649</td>
+    </tr>
+    <tr>
+      <td>Wings of Fire</td>
+      <td>A.P.J. Abdul Kalam</td>
+      <td>Biography</td>
+      <td>₹199</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+register.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - Online Bookstore</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+  <h2>Create Your Account</h2>
+  <form>
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>

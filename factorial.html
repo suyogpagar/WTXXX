@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Pop-up Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>JavaScript Pop-up Demo</h2>
+
+    <!-- Display Date Section -->
+    <label for="dateBox">Today's Date:</label><br>
+    <input type="text" id="dateBox" readonly><br>
+    <button onclick="displayDate()">Display Date</button>
+
+    <hr>
+
+    <!-- Factorial Section -->
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+</div>
+
+<script>
+    function displayDate() {
+        const today = new Date();
+        document.getElementById("dateBox").value = today.toDateString();
+    }
+
+    function calculateFactorial() {
+        const input = prompt("Enter a number to calculate its factorial:");
+        const n = parseInt(input);
+
+        if (isNaN(n) || n < 0) {
+            alert("Please enter a valid non-negative integer.");
+            return;
+        }
+
+        let factorial = 1;
+        for (let i = 2; i <= n; i++) {
+            factorial *= i;
+        }
+
+        alert("Factorial of " + n + " is " + factorial);
+    }
+</script>
+
+</body>
+</html>

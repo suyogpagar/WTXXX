@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TasteBite Restaurant</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Internal CSS -->
+  <style>
+    h1 {
+      color: #b22222;
+      font-family: 'Georgia', serif;
+    }
+    .menu-section {
+      background-color: #fff8dc;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Message (Inline CSS) -->
+  <div style="text-align: center;">
+    <img src="images/logo.png" alt="TasteBite Logo" width="120">
+    <h1>Welcome to TasteBite</h1>
+    <p style="color: #555;">Your favorite spot for delicious meals and warm vibes</p>
+  </div>
+
+  <!-- Embedded Iframe (Simulating frames) -->
+  <iframe src="menu.html" title="Menu" style="width:100%; height:300px; border:none;"></iframe>
+
+  <!-- Menu Table -->
+  <div class="menu-section">
+    <h2>Today's Specials</h2>
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>Dish</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td><img src="images/dish1.jpg" alt="Dish 1" width="80"></td>
+        <td>Paneer Butter Masala - creamy and spicy delight</td>
+        <td>₹180</td>
+      </tr>
+      <tr>
+        <td><img src="images/dish2.jpg" alt="Dish 2" width="80"></td>
+        <td>Veg Biryani - aromatic basmati rice and mixed vegetables</td>
+        <td>₹150</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Lists -->
+  <h2>Our Services</h2>
+  <ul>
+    <li>Dine-In</li>
+    <li>Home Delivery</li>
+    <li>Takeaway</li>
+  </ul>
+
+  <h2>Follow Us</h2>
+  <ol>
+    <li><a href="https://instagram.com/tastebite" target="_blank">Instagram</a></li>
+    <li><a href="https://facebook.com/tastebite" target="_blank">Facebook</a></li>
+  </ol>
+
+  <!-- Contact Form -->
+  <h2>Reserve a Table</h2>
+  <form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date"><br><br>
+
+    <label for="guests">No. of Guests:</label><br>
+    <input type="number" id="guests" name="guests" min="1"><br><br>
+
+    <input type="submit" value="Book Now">
+  </form>
+
+</body>
+</html>
+
+
+style.css
+body {
+  background-color: #fdf5e6;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #d2691e;
+  color: white;
+}
+
+img {
+  border-radius: 10px;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book>
+        <title>Wings of Fire</title>
+        <author>A.P.J. Abdul Kalam</author>
+        <isbn>9788173711466</isbn>
+        <publisher>Universities Press</publisher>
+        <edition>1</edition>
+        <price>₹250</price>
+    </book>
+    <book>
+        <title>Discovery of India</title>
+        <author>Jawaharlal Nehru</author>
+        <isbn>9780143031031</isbn>
+        <publisher>Penguin India</publisher>
+        <edition>2</edition>
+        <price>₹299</price>
+    </book>
+    <book>
+        <title>Train to Pakistan</title>
+        <author>Khushwant Singh</author>
+        <isbn>9780143065883</isbn>
+        <publisher>Penguin Books</publisher>
+        <edition>3</edition>
+        <price>₹350</price>
+    </book>
+    <book>
+        <title>God of Small Things</title>
+        <author>Arundhati Roy</author>
+        <isbn>9780679457312</isbn>
+        <publisher>IndiaInk</publisher>
+        <edition>1</edition>
+        <price>₹450</price>
+    </book>
+    <book>
+        <title>Midnight's Children</title>
+        <author>Salman Rushdie</author>
+        <isbn>9780099511937</isbn>
+        <publisher>Vintage</publisher>
+        <edition>4</edition>
+        <price>₹499</price>
+    </book>
+    <book>
+        <title>Interpreter of Maladies</title>
+        <author>Jhumpa Lahiri</author>
+        <isbn>9780395927205</isbn>
+        <publisher>Houghton Mifflin</publisher>
+        <edition>1</edition>
+        <price>₹300</price>
+    </book>
+    <book>
+        <title>The White Tiger</title>
+        <author>Aravind Adiga</author>
+        <isbn>9788172238476</isbn>
+        <publisher>HarperCollins India</publisher>
+        <edition>2</edition>
+        <price>₹400</price>
+    </book>
+    <book>
+        <title>In Custody</title>
+        <author>Anita Desai</author>
+        <isbn>9780140124378</isbn>
+        <publisher>Penguin India</publisher>
+        <edition>3</edition>
+        <price>₹275</price>
+    </book>
+    <book>
+        <title>A Suitable Boy</title>
+        <author>Vikram Seth</author>
+        <isbn>9781857991216</isbn>
+        <publisher>Orion Publishing</publisher>
+        <edition>1</edition>
+        <price>₹650</price>
+    </book>
+    <book>
+        <title>Palace of Illusions</title>
+        <author>Chitra Banerjee Divakaruni</author>
+        <isbn>9780330458535</isbn>
+        <publisher>Picador India</publisher>
+        <edition>2</edition>
+        <price>₹499</price>
+    </book>
+</library>

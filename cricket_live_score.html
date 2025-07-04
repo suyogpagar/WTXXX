@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricket Scorecard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            padding: 30px;
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: auto;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #00796b;
+        }
+        p {
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>🏏 Cricket Scorecard</h2>
+        <p><strong>Match:</strong> <span id="matchInfo"></span></p>
+        <p><strong>Venue:</strong> <span id="venue"></span></p>
+        <p><strong>Date:</strong> <span id="matchDate"></span></p>
+        <hr>
+        <h3>Live Score</h3>
+        <p><strong>Batting Team:</strong> <span id="battingTeam"></span></p>
+        <p><strong>Score:</strong> <span id="score"></span></p>
+        <p><strong>Overs:</strong> <span id="overs"></span></p>
+        <p><strong>Last Wicket:</strong> <span id="lastWicket"></span></p>
+    </div>
+
+    <script>
+        // Embedded XML (static match info)
+        const xmlData = `
+            <match>
+                <teams>
+                    <team>India</team>
+                    <team>Australia</team>
+                </teams>
+                <venue>Wankhede Stadium, Mumbai</venue>
+                <date>2025-07-04</date>
+            </match>
+        `;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+        const team1 = xmlDoc.getElementsByTagName("team")[0].textContent;
+        const team2 = xmlDoc.getElementsByTagName("team")[1].textContent;
+        const venue = xmlDoc.getElementsByTagName("venue")[0].textContent;
+        const date = xmlDoc.getElementsByTagName("date")[0].textContent;
+
+        document.getElementById("matchInfo").textContent = `${team1} vs ${team2}`;
+        document.getElementById("venue").textContent = venue;
+        document.getElementById("matchDate").textContent = date;
+
+        // Embedded JSON (live score info)
+        const jsonData = {
+            battingTeam: "India",
+            runs: 175,
+            wickets: 4,
+            overs: "18.3",
+            lastWicket: "Virat Kohli - 45 runs"
+        };
+        document.getElementById("battingTeam").textContent = jsonData.battingTeam;
+        document.getElementById("score").textContent = `${jsonData.runs}/${jsonData.wickets}`;
+        document.getElementById("overs").textContent = jsonData.overs;
+        document.getElementById("lastWicket").textContent = jsonData.lastWicket;
+    </script>
+
+</body>
+</html>
