@@ -80,3 +80,246 @@
 
 </body>
 </html>
+
+
+
+
+kst code
+
+
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Cricket Score (JSON & XML)</title> 
+    <style> 
+        body { 
+            font-family: sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+              
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: white;  
+        } 
+        .scorecard { 
+            width: 300px; 
+            margin: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.3);  
+            padding: 20px; 
+            background-color: rgba(241, 239, 239, 0.7);  
+            border-radius: 8px; 
+            box-shadow: 1px 4px 8px rgba(26, 25, 25, 0.3); 
+        } 
+        .scorecard h1 { 
+            text-align: center; 
+            margin-bottom: 15px; 
+            color: rgb(48, 46, 46);  
+        } 
+        .score-info { 
+            margin-bottom: 10px; 
+            color: rgba(41, 40, 40, 0.8);  
+        } 
+        .score-value { 
+            font-weight: bold; 
+            color: #2e2d2d; 
+        } 
+        button { 
+            padding: 10px 20px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+        } 
+        button:hover { 
+            background-color: #0056b3; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="scorecard" id="jsonScorecard"> 
+        <h1>JSON Score</h1> 
+        <p class="score-info">Runs: <span class="score-value" 
+id="jsonRuns"></span></p> 
+        <p class="score-info">Wickets: <span class="score-value" 
+id="jsonWickets"></span></p> 
+        <p class="score-info">Overs: <span class="score-value" 
+id="jsonOvers"></span></p> 
+    </div> 
+    <button onclick="fetchJsonScore()">Fetch JSON Score</button> 
+    <div class="scorecard" id="xmlScorecard"> 
+        <h1>XML Score</h1> 
+        <p class="score-info">Runs: <span class="score-value" 
+id="xmlRuns"></span></p> 
+        <p class="score-info">Wickets: <span class="score-value" 
+id="xmlWickets"></span></p> 
+        <p class="score-info">Overs: <span class="score-value" 
+id="xmlOvers"></span></p> 
+    </div> 
+    <button onclick="fetchXmlScore()">Fetch XML Score</button> 
+    <script> 
+        function fetchJsonScore() { 
+            let jsonData = { 
+                runs: Math.floor(Math.random() * 200), 
+                wickets: Math.floor(Math.random() * 10), 
+                overs: Math.floor(Math.random() * 50) + "." + 
+Math.floor(Math.random() * 6) 
+            }; 
+            document.getElementById("jsonRuns").textContent = jsonData.runs; 
+            document.getElementById("jsonWickets").textContent = 
+jsonData.wickets; 
+            document.getElementById("jsonOvers").textContent = jsonData.overs; 
+        } 
+        function fetchXmlScore() { 
+            let xmlString = ` 
+                <score> 
+                    <runs>${Math.floor(Math.random() * 200)}</runs> 
+                    <wickets>${Math.floor(Math.random() * 10)}</wickets> 
+                    <overs>${Math.floor(Math.random() * 
+50)}.${Math.floor(Math.random() * 6)}</overs> 
+                </score> 
+            `; 
+ 
+            let parser = new DOMParser(); 
+            let xmlDoc = parser.parseFromString(xmlString, "application/xml"); 
+ 
+            document.getElementById("xmlRuns").textContent = 
+xmlDoc.querySelector("runs").textContent; 
+            document.getElementById("xmlWickets").textContent = 
+xmlDoc.querySelector("wickets").textContent; 
+            document.getElementById("xmlOvers").textContent = 
+xmlDoc.querySelector("overs").textContent; 
+        } 
+    </script> 
+</body> 
+</html> 
+
+
+
+
+
+
+------USER INPUT------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Score (User Input)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .scorecard {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            background-color: rgba(241, 239, 239, 0.8);
+            border-radius: 8px;
+            box-shadow: 1px 4px 8px rgba(26, 25, 25, 0.3);
+            color: black;
+        }
+        .scorecard h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .score-info {
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 6px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- JSON Scorecard -->
+    <div class="scorecard">
+        <h1>JSON Score Input</h1>
+        <input type="number" id="jsonInputRuns" placeholder="Enter Runs">
+        <input type="number" id="jsonInputWickets" placeholder="Enter Wickets">
+        <input type="text" id="jsonInputOvers" placeholder="Enter Overs (e.g., 45.3)">
+        <button onclick="showJsonScore()">Show JSON Score</button>
+
+        <p class="score-info">Runs: <span id="jsonRuns"></span></p>
+        <p class="score-info">Wickets: <span id="jsonWickets"></span></p>
+        <p class="score-info">Overs: <span id="jsonOvers"></span></p>
+    </div>
+
+    <!-- XML Scorecard -->
+    <div class="scorecard">
+        <h1>XML Score Input</h1>
+        <input type="number" id="xmlInputRuns" placeholder="Enter Runs">
+        <input type="number" id="xmlInputWickets" placeholder="Enter Wickets">
+        <input type="text" id="xmlInputOvers" placeholder="Enter Overs (e.g., 40.2)">
+        <button onclick="showXmlScore()">Show XML Score</button>
+
+        <p class="score-info">Runs: <span id="xmlRuns"></span></p>
+        <p class="score-info">Wickets: <span id="xmlWickets"></span></p>
+        <p class="score-info">Overs: <span id="xmlOvers"></span></p>
+    </div>
+
+    <script>
+        function showJsonScore() {
+            let runs = document.getElementById("jsonInputRuns").value;
+            let wickets = document.getElementById("jsonInputWickets").value;
+            let overs = document.getElementById("jsonInputOvers").value;
+
+            document.getElementById("jsonRuns").textContent = runs;
+            document.getElementById("jsonWickets").textContent = wickets;
+            document.getElementById("jsonOvers").textContent = overs;
+        }
+
+        function showXmlScore() {
+            let runs = document.getElementById("xmlInputRuns").value;
+            let wickets = document.getElementById("xmlInputWickets").value;
+            let overs = document.getElementById("xmlInputOvers").value;
+
+            // Simulate XML creation
+            let xmlString = `
+                <score>
+                    <runs>${runs}</runs>
+                    <wickets>${wickets}</wickets>
+                    <overs>${overs}</overs>
+                </score>
+            `;
+
+            let parser = new DOMParser();
+            let xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+            document.getElementById("xmlRuns").textContent = xmlDoc.querySelector("runs").textContent;
+            document.getElementById("xmlWickets").textContent = xmlDoc.querySelector("wickets").textContent;
+            document.getElementById("xmlOvers").textContent = xmlDoc.querySelector("overs").textContent;
+        }
+    </script>
+</body>
+</html>
